@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+    <Operation Class="PatchOperationAdd">
+        <xpath>/Defs/HediffDef[defName="ArchotechArm"]/comps</xpath>
+        <value>
+            <li Class="EBF.Hediffs.HediffCompProperties_MaxHPAdjust">
+				<linearAdjustment>15</linearAdjustment>
+			</li>
+            <!--
+            <li Class="lel.Hediffs.HediffCompProperties_MaxHPAdjust">
+				<linearAdjustment>999</linearAdjustment>
+			</li>
+            -->
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationConditional">
+        <!-- Adds in a comp node if the node does not exist. -->
+        <!-- Adds in the EBF node. -->
+        <xpath>/Defs/HediffDef[defName="ArchotechLeg"]/comps</xpath>
+        <nomatch Class="PatchOperationAdd">
+            <xpath>/Defs/HediffDef[defName="ArchotechLeg"]</xpath>
+            <value>
+                <comps>
+                    <li Class="EBF.Hediffs.HediffCompProperties_MaxHPAdjust">
+                        <linearAdjustment>15</linearAdjustment>
+                    </li>
+                </comps>
+            </value>
+        </nomatch>
+        <match Class="PatchOperationAdd">
+            <xpath>/Defs/HediffDef[defName="ArchotechLeg"]/comps</xpath>
+            <value>
+                <li Class="EBF.Hediffs.HediffCompProperties_MaxHPAdjust">
+                    <linearAdjustment>15</linearAdjustment>
+                </li>
+            </value>
+        </match>
+    </Operation>
+</Patch>

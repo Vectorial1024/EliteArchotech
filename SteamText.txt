@@ -1,0 +1,11 @@
+A simple mod that grants Archotech bionics special max HP bonuses to make them even more viable.
+
+[h1]Changes Made[/h1]
+[list]
+[*]Archotech Arm: +15 max HP to installed body part
+[*]Archotech Leg: +15 max HP to installed body part
+[/list]
+
+This mod uses the Elite Bionics Framework to achieve the max HP changing effect.
+
+The code of this mod is available on GitHub here (https://github.com/Vectorial1024/EliteArchotech) as an example of how to use the Elite Bionics Framework.
