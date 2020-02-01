@@ -5,6 +5,7 @@
         <value>
             <li Class="EBF.Hediffs.HediffCompProperties_MaxHPAdjust">
 				<linearAdjustment>15</linearAdjustment>
+                <scaleAdjustment>0.1</scaleAdjustment>
 			</li>
             <!--
             <li Class="lel.Hediffs.HediffCompProperties_MaxHPAdjust">
@@ -14,27 +15,24 @@
         </value>
     </Operation>
 
-    <Operation Class="PatchOperationConditional">
-        <!-- Adds in a comp node if the node does not exist. -->
-        <!-- Adds in the EBF node. -->
+    <!-- Using the techniques acquired from X:Rebirth and X4 modding, patch for the comp node first. -->
+    <Operation Class="PatchOperationAdd">
+        <xpath>/Defs/HediffDef[defName="ArchotechLeg"]</xpath>
+        <value>
+            <comps>
+                
+            </comps>
+        </value>
+    </Operation>
+
+    <!-- And then patch for the EBF effects. -->
+    <Operation Class="PatchOperationAdd">
         <xpath>/Defs/HediffDef[defName="ArchotechLeg"]/comps</xpath>
-        <nomatch Class="PatchOperationAdd">
-            <xpath>/Defs/HediffDef[defName="ArchotechLeg"]</xpath>
-            <value>
-                <comps>
-                    <li Class="EBF.Hediffs.HediffCompProperties_MaxHPAdjust">
-                        <linearAdjustment>15</linearAdjustment>
-                    </li>
-                </comps>
-            </value>
-        </nomatch>
-        <match Class="PatchOperationAdd">
-            <xpath>/Defs/HediffDef[defName="ArchotechLeg"]/comps</xpath>
-            <value>
-                <li Class="EBF.Hediffs.HediffCompProperties_MaxHPAdjust">
-                    <linearAdjustment>15</linearAdjustment>
-                </li>
-            </value>
-        </match>
+        <value>
+            <li Class="EBF.Hediffs.HediffCompProperties_MaxHPAdjust">
+                <linearAdjustment>15</linearAdjustment>
+                <scaleAdjustment>0.1</scaleAdjustment>
+            </li>
+        </value>
     </Operation>
 </Patch>
