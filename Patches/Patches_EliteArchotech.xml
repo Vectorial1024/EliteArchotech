@@ -1,7 +1,28 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
+    <Operation Class="PatchOperationSequence">
+        <!-- Ensure a comps node exists under ArchotechArm -->
+        <success>Always</success>
+        <operations>
+            <!-- If XPath does not exist; will reject if XPath exists -->
+            <li Class="PatchOperationTest">
+                <xpath>/Defs/HediffDef[defName="ArchotechArm"]/comps</xpath>
+                <success>Invert</success>
+            </li>
+            <!-- XPath does not exist; add the comps node -->
+            <li Class="PatchOperationAdd">
+                <xpath>/Defs/HediffDef[defName="ArchotechArm"]</xpath>
+                <value>
+                    <comps>
+                        
+                    </comps>
+                </value>
+            </li>
+        </operations>
+    </Operation>
+
     <Operation Class="PatchOperationAdd">
-        <xpath>/Defs/HediffDef[defName="ArchotechArm"]/comps</xpath>
+        <xpath>/Defs/HediffDef[defName="ArchotechArm"]/comps[1]</xpath>
         <value>
             <li Class="EBF.Hediffs.HediffCompProperties_MaxHPAdjust">
 				<linearAdjustment>15</linearAdjustment>
@@ -16,18 +37,31 @@
     </Operation>
 
     <!-- Using the techniques acquired from X:Rebirth and X4 modding, patch for the comp node first. -->
-    <Operation Class="PatchOperationAdd">
-        <xpath>/Defs/HediffDef[defName="ArchotechLeg"]</xpath>
-        <value>
-            <comps>
-                
-            </comps>
-        </value>
+    <Operation Class="PatchOperationSequence">
+        <!-- It seems RimWorld will reject Hediffs with duplicate comp nodes, so we have to 
+        do it with the careful way of checking if the node exists, and add one if it does not exist yet. -->
+        <success>Always</success>
+        <operations>
+            <!-- If XPath does not exist; will reject if XPath exists -->
+            <li Class="PatchOperationTest">
+                <xpath>/Defs/HediffDef[defName="ArchotechLeg"]/comps</xpath>
+                <success>Invert</success>
+            </li>
+            <!-- XPath does not exist; add the comps node -->
+            <li Class="PatchOperationAdd">
+                <xpath>/Defs/HediffDef[defName="ArchotechLeg"]</xpath>
+                <value>
+                    <comps>
+                        
+                    </comps>
+                </value>
+            </li>
+        </operations>
     </Operation>
 
     <!-- And then patch for the EBF effects. -->
     <Operation Class="PatchOperationAdd">
-        <xpath>/Defs/HediffDef[defName="ArchotechLeg"]/comps</xpath>
+        <xpath>/Defs/HediffDef[defName="ArchotechLeg"]/comps[1]</xpath>
         <value>
             <li Class="EBF.Hediffs.HediffCompProperties_MaxHPAdjust">
                 <linearAdjustment>15</linearAdjustment>
