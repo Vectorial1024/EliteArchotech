@@ -1,10 +1,10 @@
-A simple mod that grants Archotech bionics special max HP bonuses to make them even more viable.
+A simple mod that grants Archotech bionics special max HP bonuses and attack power bonuses to make them even more viable.
 
 Package ID: V1024.EliteArchotech
 
 [h1]Changes Made[/h1]
 [list]
-[*]Archotech Arm: x110%, +15 max HP to installed body part
+[*]Archotech Arm: x110%, +15 max HP to installed body part; attack power x200% (i.e., 16.4)
 [*]Archotech Leg: x110%, +15 max HP to installed body part
 [/list]
 
