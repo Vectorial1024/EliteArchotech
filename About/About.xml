@@ -14,7 +14,7 @@
 		<li>1.1</li>
 		<li>1.0</li>
 	</supportedVersions>
-	<description>Archotech bionics are toughter. Increased max HP for body part with archotech bionics.</description>
+	<description>Archotech bionics are toughter. Increased max HP for body part with archotech bionics. Archotech arm also has increased attack strength.</description>
 	<url>https://github.com/Vectorial1024/EliteArchotech</url>
 	<modDependencies>
 		<li>
