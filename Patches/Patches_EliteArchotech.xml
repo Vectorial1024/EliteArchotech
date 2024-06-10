@@ -33,6 +33,9 @@
 				<linearAdjustment>999</linearAdjustment>
 			</li>
             -->
+            <li Class="EBF.Hediffs.HediffCompProperties_ToolPowerAdjust">
+                <scaleAdjustment>1</scaleAdjustment>
+            </li>
         </value>
     </Operation>
 
